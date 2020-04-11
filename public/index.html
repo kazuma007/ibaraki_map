@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>COVID-19 in Ibaraki</title>
+  <link rel="stylesheet" href="css/styles.css">   
+  <script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/heroic-features.css" rel="stylesheet">
+  <style>
+    .header_font_size p{
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">茨城県の最新感染動向</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <!-- <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div style="height: 50px;"></div>
+  <div class="container">
+    <header class="jumbotron my-4 header_font_size">
+      <h3 class="display-4">茨城県の最新感染動向</h3>
+      <p class="lead">最終更新日：<span id="recent_date">2020/4/10</span></p>
+      <p class="lead">データ入手先：<a href="http://www.town.sakai.ibaraki.jp/sp/page/page002165.html">茨城県及び近県における新型コロナウイルス感染者について</a></p>
+    </header>
+    <div class="row text-center">
+      <div class="col-lg-6 col-md-12 mb-4">
+        <div class="card h-100">
+          <div class="card-body" style="height: 320px;">
+            <h4 class="card-title">感染者数</h4>
+            <p class="card-text" id="total_num" style="padding-top: 12%; font-size: 70px;">0人</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body" style="height: 320px;">
+            <h4 class="card-title">感染者数推移</h4>
+            <canvas id="totalChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-lg-6 col-md-12 mb-4">
+        <div class="card h-100" style="height: 200px;">
+          <div class="card-body" style="height: 320px;">
+            <h4 class="card-title">性別毎の感染者比率</h4>
+            <canvas id="sexChart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body" style="height: 320px;">
+            <h4 class="card-title">年齢別の感染者比率</h4>
+              <canvas id="ageChart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body" style="height: 600px;">
+            <h4 class="card-title">地域毎の感染者</h4>
+            <canvas id="cityChart"></canvas>
+            <!-- <script src="js/showgooglemap.js"></script> -->
+            <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDM2AOi-gm4GCAZ4_OjSOvM8JCnI3umzgc&callback=initMap" async defer></script> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">
+        当サイトに掲載されている情報の正確性については万全を期していますが、当ウェブサイトの管理者は利用者が当サイトの情報を用いて行う一切の行為について責任を負うものではありません。また、利用者が当サイトを利用したことにより発生した利用者の損害及び利用者が第三者に与えた損害に対して、責任を負うものではありません。当サイトに掲載されている情報は、予告なしに変更又は削除することがあります。
+      </p>
+    </div>
+  </footer>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
